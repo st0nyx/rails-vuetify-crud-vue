@@ -1,24 +1,28 @@
 <template>
   <v-container>
-    <h1>Dashboard</h1>
+    <h1>Event Listing</h1>
+
     <v-row>
       <v-col cols="8">
-        <v-data-table
-          :headers="headers"
-          :items="desserts"
-          :items-per-page="5"
-          class="elevation-1"
-        ></v-data-table>
+        <div>
+          <EventCard />
+        </div>
       </v-col>
       <v-col cols="4" class="sidebar">
         <h3>Sidebar Stuff</h3>
+        <h5>- Locations</h5>
+        <h5>- Categories</h5>
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
+import EventCard from "@/components/EventCard.vue";
 export default {
   name: "DashboardPage",
+  components: {
+    EventCard
+  },
   data() {
     return {
       headers: [
@@ -61,6 +65,9 @@ export default {
 </script>
 <style>
 .sidebar {
-  background: bisque;
+  padding: 20px;
+  margin-top: 24px;
+  margin-bottom: 20px;
+  background: #dfdfdf;
 }
 </style>
