@@ -1,12 +1,17 @@
 <template>
-  <v-card class="event-card">
-    <v-card-text class="eyebrow"
-      >@{{ event.time }} on {{ event.date }}</v-card-text
-    >
-    <v-card-title>{{ event.title }}</v-card-title>
-    <v-card-subtitle>{{ event.subtitle }}</v-card-subtitle>
-    <v-card-text>{{ event.location }}</v-card-text>
-  </v-card>
+  <router-link
+    class="event-link"
+    :to="{ name: 'event-show', params: { id: event.id } }"
+  >
+    <v-card class="event-card">
+      <v-card-text class="eyebrow"
+        >@{{ event.time }} on {{ event.date }}</v-card-text
+      >
+      <v-card-title>{{ event.title }}</v-card-title>
+      <v-card-subtitle>{{ event.subtitle }}</v-card-subtitle>
+      <v-card-text>{{ event.location }}</v-card-text>
+    </v-card>
+  </router-link>
 </template>
 
 <script>

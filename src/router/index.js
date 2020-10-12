@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Dashboard from "@/views/Dashboard";
 import Login from "@/views/Login";
+import EventShow from "@/views/EventShow";
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,12 @@ const routes = [
     path: "/dashboard",
     name: "dashboard",
     component: Dashboard
+  },
+  {
+    path: "/event/:id",
+    name: "event-show",
+    component: EventShow,
+    props: true
   },
   {
     path: "/login",
