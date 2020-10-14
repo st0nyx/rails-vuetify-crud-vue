@@ -18,10 +18,21 @@
 </template>
 <script>
 import EventCard from "@/components/EventCard.vue";
+import axios from "axios";
 export default {
   name: "DashboardPage",
   components: {
     EventCard
+  },
+  created() {
+    axios
+      .get("http://localhost:3000/locations")
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.log("There is error:", error.response);
+      });
   },
   data() {
     return {
