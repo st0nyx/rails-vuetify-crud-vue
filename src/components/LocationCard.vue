@@ -1,11 +1,16 @@
 <template>
-  <div>
-    <v-card class="event-card">
-      <v-card-title>
-        {{ location.name }}
-      </v-card-title>
-    </v-card>
-  </div>
+  <router-link
+    class="location-link"
+    :to="{ name: 'location-show', params: { id: location.id } }"
+  >
+    <div>
+      <v-card class="event-card">
+        <v-card-title>
+          {{ location.name }}
+        </v-card-title>
+      </v-card>
+    </div>
+  </router-link>
 </template>
 
 <script>

@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Dashboard from "@/views/Dashboard";
 import Login from "@/views/Login";
 import EventShow from "@/views/EventShow";
+import LocationShow from "@/views/LocationShow";
 
 Vue.use(VueRouter);
 
@@ -17,6 +18,12 @@ const routes = [
     path: "/dashboard",
     name: "dashboard",
     component: Dashboard
+  },
+  {
+    path: "/location/:id",
+    name: "location-show",
+    component: LocationShow,
+    props: true
   },
   {
     path: "/event/:id",

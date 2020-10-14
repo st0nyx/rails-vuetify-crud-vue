@@ -14,6 +14,6 @@ export default {
     return apiClient.get("/locations");
   },
   getLocation(id) {
-    return apiClient.get("/location/" + id);
+    return apiClient.get("/locations/" + id);
   }
 };
