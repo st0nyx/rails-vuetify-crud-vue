@@ -21,7 +21,7 @@
 <script>
 import EventCard from "@/components/EventCard.vue";
 import LocationCard from "@/components/LocationCard.vue";
-import axios from "axios";
+import LocationService from "@/services/LocationService.js";
 export default {
   name: "DashboardPage",
   components: {
@@ -29,13 +29,12 @@ export default {
     LocationCard
   },
   created() {
-    axios
-      .get("http://localhost:3000/locations")
+    LocationService.getLocations()
       .then(response => {
         this.locations = response.data;
       })
       .catch(error => {
-        console.log("There is error:", error.response);
+        console.log("There is an error", error.response);
       });
   },
   data() {
