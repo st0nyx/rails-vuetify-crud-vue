@@ -25,4 +25,10 @@ export default {
   text-decoration: none;
   font-weight: 100;
 }
+button {
+  padding: 15px;
+  border: 1px solid green;
+  font-size: 18px;
+  margin: 15px;
+}
 </style>
