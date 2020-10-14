@@ -1,7 +1,6 @@
 <template>
   <v-container>
     <h1>Event Listing</h1>
-
     <v-row>
       <v-col cols="8">
         <div>
@@ -9,25 +8,25 @@
         </div>
       </v-col>
       <v-col cols="4" class="sidebar">
-        <h3>Listing Locations</h3>
-        <ul>
-          <li
-            v-for="location in locations"
-            :key="location.id"
-            :location="location"
-          >{{ location.name }}</li>
-        </ul>
+        <h3>Locations</h3>
+        <LocationCard
+          v-for="location in locations"
+          :key="location.id"
+          :location="location"
+        ></LocationCard>
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
 import EventCard from "@/components/EventCard.vue";
+import LocationCard from "@/components/LocationCard.vue";
 import axios from "axios";
 export default {
   name: "DashboardPage",
   components: {
-    EventCard
+    EventCard,
+    LocationCard
   },
   created() {
     axios
