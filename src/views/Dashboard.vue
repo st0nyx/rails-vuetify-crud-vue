@@ -9,9 +9,14 @@
         </div>
       </v-col>
       <v-col cols="4" class="sidebar">
-        <h3>Sidebar Stuff</h3>
-        <h5>- Locations</h5>
-        <h5>- Categories</h5>
+        <h3>Listing Locations</h3>
+        <ul>
+          <li
+            v-for="location in locations"
+            :key="location.id"
+            :location="location"
+          >{{ location.name }}</li>
+        </ul>
       </v-col>
     </v-row>
   </v-container>
@@ -28,7 +33,7 @@ export default {
     axios
       .get("http://localhost:3000/locations")
       .then(response => {
-        console.log(response.data);
+        this.locations = response.data;
       })
       .catch(error => {
         console.log("There is error:", error.response);
@@ -36,6 +41,7 @@ export default {
   },
   data() {
     return {
+      locations: [],
       headers: [
         {
           text: "Dessert (100g serving)",
